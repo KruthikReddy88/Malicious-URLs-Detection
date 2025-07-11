@@ -71,7 +71,8 @@ Three classifiers were built and evaluated:
 
 A custom `get_prediction_from_url()` function allows live user input via CLI to test URLs.
 
-```python
+python
+```
 while True:
     url = input("Enter a URL to check (or type 'exit' to quit): ")
     if url.lower() == 'exit':
@@ -127,7 +128,4 @@ Open `Malicious URL Detection.ipynb` in Jupyter Notebook / Google Colab and run 
 ## 📜 License
 
 This project is open-sourced under the MIT License.
-
-```
-
 ---
