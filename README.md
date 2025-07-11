@@ -86,6 +86,8 @@ while True:
 ```
 Enter a URL to check (or type 'exit' to quit): www.google.com
 Prediction: SAFE
+Enter a URL to check (or type 'exit' to quit): titaniumcorporate.co.za
+Prediction: MALWARE
 ```
 
 ---
