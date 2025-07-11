@@ -1,132 +1,158 @@
+Here’s a complete `README.md` file for your **Malicious URL Detection** project. It explains the project, setup, usage, features, and predictions in a clear and professional way.
+
+---
+
+### ✅ `README.md`
+
 ````markdown
 # 🔐 Malicious URL Detection using Machine Learning
 
-This project aims to build an intelligent system that detects **malicious URLs** using feature engineering and machine learning models like **Random Forest**, **LightGBM**, and **XGBoost**. The system can classify URLs into four categories:
-
-- 🟢 **Benign**
-- 🟠 **Defacement**
-- 🟥 **Phishing**
-- 🟣 **Malware**
+This project is a machine learning-based system for detecting **malicious URLs** such as phishing, malware, and defacement attempts. It uses a combination of URL-based feature engineering and powerful classifiers like Random Forest, LightGBM, and XGBoost to make accurate predictions.
 
 ---
 
-## 📂 Dataset
+## 📌 Features
 
-The dataset used is `malicious_phish.csv` which contains labeled URLs and is publicly available. It includes the following columns:
-
-- `url` – The actual URL
-- `type` – The class label: `benign`, `malware`, `defacement`, `phishing`
-
----
-
-## 🧠 Key Features
-
-### ✅ Feature Engineering
-Over **20+ features** were extracted to enhance URL classification:
-- Presence of IP address
-- Abnormal URL patterns
-- Use of shortening services
-- Special character counts (`.`, `@`, `-`, `=`, `?`, `%`)
-- URL length, directory depth
-- Suspicious keywords
-- Digit and letter counts
-- First directory length, TLD length, etc.
-
-### 📊 Exploratory Data Analysis (EDA)
-Used `seaborn` and `matplotlib` to visualize:
-- URL type distributions
-- Feature-wise distributions per label
+- ✅ WordCloud visualization of malicious domains
+- ✅ Feature engineering based on URL patterns and structure
+- ✅ Supports classification into:
+  - **Benign**
+  - **Defacement**
+  - **Phishing**
+  - **Malware**
+- ✅ High accuracy on benchmark dataset
+- ✅ Live URL prediction via user input
+- ✅ Lightweight and fast
 
 ---
 
-## 🧪 Model Training
+## 🧠 Models Used
 
-Three classifiers were built and evaluated:
-
-| Model              | Accuracy |
-|-------------------|----------|
-| Random Forest      | 96.6%    |
-| LightGBM           | 95.9%    |
-| XGBoost            | 96.1%    |
-
-📈 Evaluation metrics:
-- Precision
-- Recall
-- F1-Score
-- Confusion Matrix
-- Feature Importance
+- **Random Forest Classifier**
+- **LightGBM Classifier**
+- **XGBoost Classifier**
 
 ---
 
-## 🧰 Libraries Used
+## 📁 Dataset
 
-- `pandas`, `numpy`
-- `matplotlib`, `seaborn`
-- `sklearn`, `xgboost`, `lightgbm`
-- `tld`, `urllib`, `re`
-- `wordcloud`, `googlesearch-python`
+The dataset used is `malicious_phish.csv`, which includes labeled URLs classified into:
+- `benign`
+- `defacement`
+- `phishing`
+- `malware`
 
 ---
 
-## 🔮 URL Prediction (Live Inference)
+## 🛠️ Installation & Setup
 
-A custom `get_prediction_from_url()` function allows live user input via CLI to test URLs.
-
-```python
-while True:
-    url = input("Enter a URL to check (or type 'exit' to quit): ")
-    if url.lower() == 'exit':
-        break
-    result = get_prediction_from_url(url)
-    print(f"Prediction: {result}")
+1. **Clone the repo:**
+```bash
+git clone https://github.com/yourusername/malicious-url-detector.git
+cd malicious-url-detector
 ````
 
-✅ Output Example:
+2. **Install dependencies:**
 
+```bash
+pip install -r requirements.txt
 ```
-Enter a URL to check (or type 'exit' to quit): www.google.com
-Prediction: SAFE
+
+3. **Required packages include:**
+
+```txt
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+lightgbm
+wordcloud
+tld
+googlesearch-python
 ```
 
 ---
 
 ## 🚀 How to Run
 
-### 1. Clone the repository or upload the notebook
-
-```
-git clone <your_repo_url>
-```
-
-### 2. Install Required Packages
+### 1. Run the Jupyter notebook
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn xgboost lightgbm wordcloud googlesearch-python tld
+jupyter notebook malicious-tfidf-ml-feat-engg.ipynb
 ```
 
-### 3. Run the Jupyter Notebook
+### 2. OR run the prediction script (if modularized)
 
-Open `Malicious URL Detection.ipynb` in Jupyter Notebook / Google Colab and run all cells sequentially.
+```bash
+python predict.py
+```
+
+### 3. Predict via User Input
+
+Once the model is trained, enter URLs manually:
+
+```python
+Enter a URL to check (or type 'exit' to quit): www.facebook.com
+Prediction: SAFE
+```
 
 ---
 
-## 📌 Future Enhancements
+## ⚙️ Feature Engineering
 
-* Integrate Flask/Django for a web-based frontend.
-* Add real-time threat database lookup (e.g., VirusTotal).
-* Convert into browser extension for real-time URL protection.
-* Add deep learning models like LSTM on URL tokens.
+Some of the features extracted from URLs:
+
+* Presence of IP in domain
+* Abnormal structure
+* Use of shortening services
+* Count of `.` / `@` / `https` / `%` / etc.
+* Domain and path length
+* Top-level domain (TLD) length
+* Suspicious words
 
 ---
 
-## 👨‍💻 Author
+## 📊 Evaluation
 
-* **Kruthik Reddy J.** – Cyber Security & Machine Learning Enthusiast
+Example metrics:
+
+* **Accuracy**: \~97%
+* **Precision & Recall**: High across all four classes
+* **Confusion Matrix & Feature Importance**: Visualized using seaborn
+
+---
+
+## 🧪 Example Predictions
+
+| URL                          | Prediction |
+| ---------------------------- | ---------- |
+| `www.facebook.com`           | SAFE       |
+| `titaniumcorporate.co.za`    | MALWARE    |
+| `phishingsite.co/fake-login` | PHISHING   |
+
+---
+
+## 🧑‍💻 Author
+
+**Kruthik Reddy J.**
+Cyber Security Enthusiast & ML Practitioner
 
 ---
 
 ## 📜 License
 
-This project is open-sourced under the MIT License.
+This project is open source under the [MIT License](LICENSE).
 
+```
+
+---
+
+Let me know if you want:
+- A version with setup instructions for Google Colab
+- Deployment instructions (Flask, Streamlit, etc.)
+- Or help converting this into a web app
+
+Shall I save this as a `README.md` file for you?
 ```
